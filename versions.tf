@@ -7,5 +7,6 @@ terraform {
     random     = ">= 2.1"
     kubernetes = "~> 1.11"
     helm       = ">= 1.0"
+    utils      = ">= 0.12.0"
   }
 }
