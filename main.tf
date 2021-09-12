@@ -10,5 +10,4 @@ module "cluster-autoscaler" {
 module "metrics-server" {
     source = "./modules/metrics-server"
     count = var.metrics_server_enabled ? 1 : 0
-    cluster_name = var.cluster_name
 }
