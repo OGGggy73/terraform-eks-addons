@@ -14,7 +14,7 @@ variable "helm_chart_name" {
 
 variable "helm_chart_version" {
   type        = string
-  default     = "5.9.2"
+  default     = "0.5.0"
   description = "Version of the Helm chart"
 }
 
@@ -26,7 +26,7 @@ variable "helm_release_name" {
 
 variable "helm_repo_url" {
   type        = string
-  default     = "https://charts.bitnami.com/bitnami"
+  default     = "https://kubernetes-sigs.github.io/metrics-server/"
   description = "Helm repository"
 }
 
