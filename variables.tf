@@ -4,6 +4,12 @@ variable "cluster_autoscaler_enabled" {
   description = "Variable indicating whether deployment is enabled"
 }
 
+variable "metrics_server_enabled" {
+  type        = bool
+  default     = true
+  description = "Variable indicating whether deployment is enabled"
+}
+
 variable "cluster_name" {
   type        = string
   description = "The name of the cluster"
