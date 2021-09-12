@@ -1,11 +1,3 @@
-# metrics-server
-
-variable "enabled" {
-  type        = bool
-  default     = true
-  description = "Variable indicating whether deployment is enabled"
-}
-
 # Helm
 
 variable "helm_create_namespace" {
