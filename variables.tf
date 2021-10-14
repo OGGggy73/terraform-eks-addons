@@ -10,6 +10,18 @@ variable "metrics_server_enabled" {
   description = "Variable indicating whether deployment is enabled"
 }
 
+variable "ingress_nginx_enabled" {
+  type        = bool
+  default     = true
+  description = "Variable indicating whether deployment is enabled"
+}
+
+variable "ingress_nginx_additional_sets" {
+  type        = list
+  default     = []
+  description = "Variable containing additional values passed to helm chart"
+}
+
 variable "cluster_name" {
   type        = string
   description = "The name of the cluster"
