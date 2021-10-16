@@ -22,6 +22,12 @@ variable "external_secrets_enabled" {
   description = "Variable indicating whether deployment is enabled"
 }
 
+variable "external_dns_enabled" {
+  type        = bool
+  default     = true
+  description = "Variable indicating whether deployment is enabled"
+}
+
 variable "ingress_nginx_additional_sets" {
   type        = list
   default     = []
@@ -47,4 +53,16 @@ variable "cluster_autoscaler_helm_create_namespace" {
   type        = bool
   default     = true
   description = "Create the namespace if it does not yet exist"
+}
+
+variable "hosted_zones" {
+  type        = list
+  default     = []
+  description = "List of Hosted Zones to be depended on for creation"
+}
+
+variable "hosted_zone_ids" {
+  type        = list
+  default     = []
+  description = "List of Hosted Zones to be allowed access to externalDNS"
 }

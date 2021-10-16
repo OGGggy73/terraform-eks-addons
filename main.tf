@@ -28,3 +28,16 @@ module "external-secrets" {
     cluster_identity_oidc_issuer_arn = var.cluster_identity_oidc_issuer_arn
     secrets_aws_region               = data.aws_region.current.name
 }
+
+module "external-dns" {
+    source = "./modules/external-dns"
+    count = var.external_dns_enabled ? 1 : 0
+    cluster_name                     = var.cluster_name
+    cluster_identity_oidc_issuer     = var.cluster_identity_oidc_issuer
+    cluster_identity_oidc_issuer_arn = var.cluster_identity_oidc_issuer_arn
+    settings = {
+    "policy" = "sync" # Modify how DNS records are sychronized between sources and providers.
+    }
+    mod_dependency                   = var.hosted_zones
+    policy_allowed_zone_ids          = var.hosted_zone_ids
+}
