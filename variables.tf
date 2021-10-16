@@ -16,6 +16,12 @@ variable "ingress_nginx_enabled" {
   description = "Variable indicating whether deployment is enabled"
 }
 
+variable "external_secrets_enabled" {
+  type        = bool
+  default     = true
+  description = "Variable indicating whether deployment is enabled"
+}
+
 variable "ingress_nginx_additional_sets" {
   type        = list
   default     = []
