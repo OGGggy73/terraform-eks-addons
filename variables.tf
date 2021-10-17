@@ -34,6 +34,12 @@ variable "ingress_nginx_additional_sets" {
   description = "Variable containing additional values passed to helm chart"
 }
 
+variable "flux_enabled" {
+  type        = bool
+  default     = true
+  description = "Variable indicating whether deployment is enabled"
+}
+
 variable "cluster_name" {
   type        = string
   description = "The name of the cluster"
@@ -65,4 +71,26 @@ variable "hosted_zone_ids" {
   type        = list
   default     = []
   description = "List of Hosted Zones to be allowed access to externalDNS"
+}
+
+variable "flux_git_branch" {
+  type        = string
+  description = "flux git branch name"
+}
+
+variable "flux_git_url" {
+  type        = string
+  description = "flux git url"
+}
+
+variable "flux_git_path" {
+  type        = string
+  default     = ""
+  description = "Path within git repo to locate Kubernetes manifests (relative path)"
+}
+
+variable "flux_sync_interval" {
+  type        = string
+  default     = "5m"
+  description = "Flux sync interval"
 }

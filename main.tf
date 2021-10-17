@@ -41,3 +41,12 @@ module "external-dns" {
     mod_dependency                   = var.hosted_zones
     policy_allowed_zone_ids          = var.hosted_zone_ids
 }
+
+module "flux" {
+    source = "./modules/flux"
+    count  = var.flux_enabled ? 1 : 0
+    cluster_name = var.cluster_name
+    flux_git_branch = var.flux_git_branch
+    flux_git_url = var.flux_git_url
+    flux_sync_interval = var.flux_sync_interval
+}
